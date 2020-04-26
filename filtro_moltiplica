@@ -1,0 +1,29 @@
+package main
+
+import (
+	"fmt"
+	"os"
+	"strconv"
+)
+
+func main() {
+	lista := os.Args[1:]
+	var cont, molt int
+	for _, numero := range lista {
+		n, err := strconv.Atoi(numero)
+
+		if err == nil {
+			if cont == 0 {
+				molt = n
+				cont++
+			} else {
+				molt = molt * n
+			}
+		}
+		if err != nil {
+
+		}
+
+	}
+	fmt.Println(molt)
+}
