@@ -15,7 +15,7 @@ func main() {
 	}
 	min := minimo(slice)
 	max := massimo(slice)
-	med := media(min, max)
+	med := media(slice)
 	fmt.Print("Minore: ", min, "\nMassimo: ", max, "\nMedio: ", med)
 
 }
@@ -49,10 +49,16 @@ func massimo(sl []int) int {
 	}
 	return massimo
 }
-func media(min int, max int) float64 {
-	minflt := float64(min)
-	maxflt := float64(max)
+func media(sl []int) float64 {
+	var somma int
 	var media float64
-	media = (maxflt + minflt) / 2
+	for i := 0; i < len(sl); i++ {
+
+		somma = somma + sl[i]
+
+	}
+	sommaflt := float64(somma)
+	divisore := float64(len(sl))
+	media = sommaflt / divisore
 	return media
 }
